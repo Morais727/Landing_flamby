@@ -2006,3 +2006,164 @@ header {
     position: relative;
     z-index: 2;
 }
+
+
+
+/* ============================================================
+   RESPONSIVIDADE GERAL FINAL
+   ============================================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .header-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-image {
+        height: 420px;
+    }
+
+    .hero-texto {
+        text-align: center;
+        padding: 48px 24px;
+    }
+
+    .sobre-content {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-destaques {
+        grid-template-columns: 1fr;
+    }
+
+    .aulas-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .aulas-menu {
+        height: auto;
+    }
+
+    .aulas-feature {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .aulas-imagem {
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 64px 0;
+    }
+
+    .container,
+    .aulas .container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .logo-area {
+        flex-direction: column;
+    }
+
+    .logo-area h1 {
+        font-size: 20px;
+    }
+
+    .btn-agenda {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: clamp(32px, 9vw, 42px);
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .sobre-texto {
+        padding-left: 22px;
+    }
+
+    .sobre-card {
+        min-height: auto;
+    }
+
+    .aulas-texto {
+        padding: 36px 24px;
+    }
+
+    .aulas-texto h2 {
+        font-size: clamp(30px, 9vw, 38px);
+    }
+
+    .aulas-texto p {
+        font-size: 16px;
+    }
+
+    .aulas-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-avaliacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .Idealizadora-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        height: 300px;
+    }
+
+    .aulas-imagem {
+        height: 260px;
+    }
+
+    .menu-item {
+        min-height: auto;
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .menu-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .btn,
+    .btn-feature,
+    .btn-avaliacoes-google {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
