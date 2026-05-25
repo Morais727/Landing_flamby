@@ -2167,3 +2167,22 @@ img {
         text-align: center;
     }
 }
+
+@media (max-width: 768px) {
+
+    .aulas-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aulas-conteudo {
+        order: 1;
+        width: 100%;
+    }
+
+    .aulas-menu {
+        order: 2;
+        width: 100%;
+        margin-top: 24px;
+    }
+}
