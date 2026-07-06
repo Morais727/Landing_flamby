@@ -55,7 +55,7 @@ header {
 }
 
 .logo {
-    height: 40px;
+    height: 184px;
     width: auto;
 }
 
@@ -252,6 +252,10 @@ section:last-of-type::after {
     align-items: start;
 }
 
+.sobre-texto {
+    max-width: 1500px;
+}
+
 .sobre-texto h2 {
     font-size: 32px;
     margin-bottom: 18px;
@@ -284,6 +288,8 @@ section:last-of-type::after {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .sobre-card {
@@ -456,115 +462,61 @@ section:last-of-type::after {
     }
 }
 
-/* IDEALIZADORA */
-.Idealizadora {
-    padding: 80px 0;
-    background: #f8fafc;
-}
-
-.Idealizadora h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    color: #0f172a;
-    font-size: 32px;
-}
-
-.Idealizadora-card {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 40px;
-    align-items: center;
-    background: #ffffff;
-    padding: 36px;
-    border-radius: 22px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-    transition: all 0.3s ease;
-}
-
-.Idealizadora-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
-}
-
-.Idealizadora-imagem {
+/* PROFESSORA NA SEÇÃO SOBRE */
+.sobre-texto-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f1f5f9;
-    padding: 16px;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
+    gap: 48px;
+    align-items: stretch;
+    position: relative;
 }
 
-.Idealizadora-imagem img {
-    height: 180px;
-    object-fit: cover;
-    object-position: center 20%;
+.sobre-texto-col {
+    flex: 1;
+}
+
+.sobre-texto-col p {
+    text-align: justify;
+}
+
+.sobre-texto-col-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-professora {
+    width: 100%;
+    max-width: 400px;
+}
+
+.sobre-professora img {
+    width: 100%;
+    height: auto;
     border-radius: 16px;
     display: block;
-    border: 3px solid #ffffff;
+    border: 4px solid #ffffff;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
-    transition: transform 0.3s ease;
 }
 
-.Idealizadora-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 18px;
+.sobre-texto-col-left h2 {
+    margin-bottom: 28px;
 }
 
-.badge {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 700;
-}
+@media (max-width: 768px) {
+    .sobre-texto-grid {
+        flex-direction: column;
+        gap: 28px;
+    }
 
-.badge-dark {
-    background: #020617;
-    color: #ffffff;
-}
+    .sobre-professora {
+        max-width: 260px;
+        margin: 0 auto;
+    }
 
-.badge-light {
-    background: #e2e8f0;
-    color: #0f172a;
-    border: 1px solid #cbd5e1;
-}
-
-.Idealizadora-info h3 {
-    font-size: 28px;
-    margin-bottom: 6px;
-    color: #0f172a;
-}
-
-.Idealizadora-titulo {
-    display: block;
-    color: #475569;
-    font-weight: 600;
-    margin-bottom: 18px;
-}
-
-.Idealizadora-info p {
-    margin-bottom: 14px;
-    color: #475569;
-    line-height: 1.75;
-    font-size: 16px;
-}
-
-.Idealizadora-diferenciais {
-    margin-top: 16px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.Idealizadora-diferenciais li {
-    color: #0f172a;
-    font-weight: 500;
+    .sobre-professora img {
+        max-width: none;
+        margin: 0;
+    }
 }
 
 /* AVALIAÇÕES */
@@ -907,10 +859,6 @@ section:last-of-type::after {
         font-size: 18px;
     }
 
-    .sobre-content {
-        grid-template-columns: 1fr;
-    }
-
     .lista-avaliacoes {
         grid-template-columns: 1fr;
     }
@@ -952,22 +900,6 @@ section:last-of-type::after {
         font-size: 17px;
     }
 
-    .Idealizadora-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 28px;
-        gap: 24px;
-    }
-
-    .Idealizadora-imagem img {
-        width: 150px;
-        height: 170px;
-    }
-
-    .Idealizadora-badges {
-        justify-content: center;
-    }
-
     .avaliacoes-google {
         padding: 70px 0;
     }
@@ -995,7 +927,7 @@ section:last-of-type::after {
     }
 
     .logo {
-        height: 34px;
+        height: 48px;
     }
 
     .logo-area {
@@ -1085,14 +1017,7 @@ header {
 }
 
 .logo {
-    height: 54px;
-}
-
-.logo-area h1 {
-    font-size: 26px;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #ffffff;
-    letter-spacing: -0.4px;
+    height: 84px;
 }
 
 .header-actions {
@@ -1216,8 +1141,9 @@ section::after {
 }
 
 .sobre-content {
-    grid-template-columns: 1.05fr 1.55fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     align-items: center;
 }
 
@@ -1226,13 +1152,13 @@ section::after {
     padding-left: 38px;
 }
 
-.sobre-texto::before {
+.sobre-texto-grid::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 9px;
+    left: -38px;
+    top: -44px;
+    bottom: 6px;
     width: 2px;
-    height: calc(100% - 6px);
     background: var(--dourado);
 }
 
@@ -1290,6 +1216,7 @@ section::after {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    column-gap: 48px;
 }
 
 .sobre-card {
@@ -1365,7 +1292,6 @@ section::after {
         text-align: center;
     }
 
-    .sobre-content,
     .sobre-destaques {
         grid-template-columns: 1fr;
     }
@@ -2050,10 +1976,6 @@ img {
     .hero-texto {
         text-align: center;
         padding: 48px 24px;
-    }
-
-    .sobre-content {
-        grid-template-columns: 1fr;
     }
 
     .sobre-destaques {
