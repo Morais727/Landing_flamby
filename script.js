@@ -24,6 +24,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // ============================================================
+// MENU HAMBÚRGUER (tablet e celular)
+// ============================================================
+
+const header = document.querySelector("header");
+const menuToggle = document.querySelector(".menu-toggle");
+
+function definirMenu(aberto) {
+    header.classList.toggle("menu-aberto", aberto);
+    menuToggle.setAttribute("aria-expanded", aberto);
+    menuToggle.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+    menuToggle.querySelector("i").className = aberto ? "bi bi-x-lg" : "bi bi-list";
+}
+
+menuToggle.addEventListener("click", () => {
+    definirMenu(!header.classList.contains("menu-aberto"));
+});
+
+// fecha o menu ao escolher um link
+document.querySelectorAll("#menu-principal a").forEach(link => {
+    link.addEventListener("click", () => definirMenu(false));
+});
+
+
+// ============================================================
 // ELEMENTOS
 // ============================================================
 
