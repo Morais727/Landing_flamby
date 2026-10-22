@@ -250,40 +250,6 @@ section:last-of-type::after {
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
 
-.sobre-destaques {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.sobre-card {
-    background: #ffffff;
-    padding: 22px;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    border: 1px solid #e2e8f0;
-    transition: all 0.25s ease;
-}
-
-.sobre-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-}
-
-.sobre-card h3 {
-    margin-bottom: 8px;
-    color: #0f172a;
-    font-size: 24px;
-}
-
-.sobre-card p {
-    color: #475569;
-    line-height: 1.6;
-    font-size: 16px;
-}
-
 /* BENEFÍCIOS */
 .beneficios {
     background: #f1f5f9;
@@ -1285,87 +1251,6 @@ section::after {
     margin-bottom: 28px;
 }
 
-.sobre-destaques-content {
-    display: flex;
-    justify-content: center;
-    margin-top: 48px;
-}
-
-.sobre-destaques {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    column-gap: 48px;
-    width: 100%;
-}
-
-.sobre-card {
-    min-height: 430px;
-    padding: 54px 30px 38px;
-    border-radius: 9px;
-    text-align: center;
-    border: 1px solid #edf0f5;
-    box-shadow: 0 14px 32px rgba(2, 11, 47, 0.09);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.sobre-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 38px rgba(2, 11, 47, 0.13);
-}
-
-.sobre-card-icone {
-    width: 104px;
-    height: 104px;
-    border-radius: 999px;
-    background: var(--azul-principal);
-    color: var(--dourado);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 54px;
-    font-weight: 300;
-    margin-bottom: 54px;
-    line-height: 1;
-}
-
-.sobre-card h3 {
-    color: var(--azul-principal);
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 30px;
-    font-weight: 800;
-}
-
-.sobre-card p {
-    color: #29344c;
-    font-size: 16px;
-    line-height: 2;
-    margin: 0;
-}
-
-.sobre-card::after {
-    content: "";
-    width: 42px;
-    height: 3px;
-    background: var(--dourado);
-    margin-top: auto;
-}
-
-@media (max-width: 980px) {
-
-    .sobre-destaques {
-        grid-template-columns: 1fr;
-    }
-
-    .sobre-card {
-        min-height: auto;
-    }
-}
-
 @media (max-width: 768px) {
     header {
         padding: 22px 0;
@@ -1392,7 +1277,7 @@ html,
 body {
     width: 100%;
     min-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -1994,10 +1879,6 @@ img {
         flex-wrap: wrap;
     }
 
-    .sobre-destaques {
-        grid-template-columns: 1fr;
-    }
-
     .aulas-layout {
         grid-template-columns: 1fr;
     }
@@ -2044,10 +1925,6 @@ img {
 
     .sobre-texto {
         padding-left: 22px;
-    }
-
-    .sobre-card {
-        min-height: auto;
     }
 
     .aulas-texto {
@@ -2298,7 +2175,6 @@ section.hero .btn:hover {
     }
 }
 
-
 /* ============================================================
    MOBILE IMPROVEMENTS
    ============================================================ */
@@ -2414,11 +2290,165 @@ section.hero .btn:hover {
 
 @media (hover: none) {
     .card:hover,
-    .sobre-card:hover,
     .aula-card:hover,
     .card-avaliacao:hover,
     .menu-item:hover,
     .aulas-mini-card:hover {
         transform: none !important;
+    }
+}
+
+/* ============================================================
+   BARRA DE DESTAQUES - logo abaixo do hero
+   ============================================================ */
+/* bordas em onda: a barra sobe um pouco sobre o hero e desce sobre a
+   seção seguinte; a máscara deixa as curvas transparentes */
+section.destaques-barra {
+    --onda: 44px;
+    position: relative;
+    z-index: 2;
+    margin: calc(var(--onda) * -1) 0;
+    padding: calc(var(--onda) + 36px) 0;
+    color: #fff;
+    background: linear-gradient(110deg, var(--azul-principal) 0%, var(--azul-secundario) 55%, #0b2266 100%);
+    -webkit-mask:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 26C220 6 420 2 700 20S1180 44 1440 12V44H0Z'/%3E%3C/svg%3E") top / 100% var(--onda) no-repeat,
+        linear-gradient(#000, #000) center / 100% calc(100% - var(--onda) * 2 + 2px) no-repeat,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V24C1240 42 1000 40 760 22S260 2 0 18Z'/%3E%3C/svg%3E") bottom / 100% var(--onda) no-repeat;
+    mask:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 26C220 6 420 2 700 20S1180 44 1440 12V44H0Z'/%3E%3C/svg%3E") top / 100% var(--onda) no-repeat,
+        linear-gradient(#000, #000) center / 100% calc(100% - var(--onda) * 2 + 2px) no-repeat,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V24C1240 42 1000 40 760 22S260 2 0 18Z'/%3E%3C/svg%3E") bottom / 100% var(--onda) no-repeat;
+}
+
+.destaques-barra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.destaque-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 8px 32px;
+}
+
+.destaque-item + .destaque-item {
+    border-left: 1px solid rgba(245, 180, 0, 0.35);
+}
+
+.destaque-icone {
+    flex-shrink: 0;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--dourado);
+}
+
+.destaque-item h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.destaque-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 900px) {
+    section.destaques-barra {
+        --onda: 28px;
+        padding: calc(var(--onda) + 12px) 0;
+    }
+
+    /* espaço para a onda não encostar no botão do hero */
+    section.hero .hero-texto {
+        padding-bottom: 76px;
+    }
+
+    .destaques-barra-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .destaque-item {
+        padding: 20px 4px;
+    }
+
+    .destaque-item + .destaque-item {
+        border-left: none;
+        border-top: 1px solid rgba(245, 180, 0, 0.35);
+    }
+}
+
+/* ============================================================
+   MENU FIXO NO TOPO
+   ============================================================ */
+html {
+    scroll-padding-top: 110px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(2, 11, 47, 0.25);
+}
+
+/* links distribuídos no espaço entre o logo e os botões */
+.nav-links {
+    flex: 1;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 0;
+    max-width: 560px;
+    margin: 0 auto 0 clamp(0px, 6vw - 60px, 26px);
+}
+
+.nav-links a {
+    font-size: clamp(16px, 1.35vw, 19px);
+    padding: 8px clamp(8px, 1vw, 14px);
+    white-space: nowrap;
+}
+
+.logo-area,
+.btn-agenda {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* mais respiro entre Instagram, WhatsApp e o botão de agendar */
+.header-actions {
+    gap: clamp(12px, 3vw - 20px, 22px);
+}
+
+/* afasta o logo da borda; cresce com a tela e some perto de 1024px */
+.logo-area {
+    margin-left: clamp(0px, 8vw - 80px, 56px);
+}
+
+@media (max-width: 1024px) {
+    html {
+        scroll-padding-top: 0;
+    }
+
+    header {
+        position: relative;
+    }
+
+    .logo-area {
+        margin-left: 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
     }
 }
