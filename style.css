@@ -2105,10 +2105,12 @@ section.hero .btn:hover {
         text-align: center;
     }
 
+    /* altura explícita: o Safari do iPhone ignora o aspect-ratio
+       neste item de grid e a foto ficava com altura zero */
     .hero-imagem {
+        align-self: auto;
         min-height: 0;
-        aspect-ratio: 3 / 2;
-        max-height: 460px;
+        height: min(66.67vw, 460px);
     }
 
     .hero-imagem img {
@@ -2144,7 +2146,7 @@ section.hero .btn:hover {
 /* ---------- Mobile ---------- */
 @media (max-width: 480px) {
     .hero-imagem {
-        aspect-ratio: 4 / 3.4;
+        height: 85vw;
     }
 
     .hero-imagem img {
